@@ -1,0 +1,169 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="text-muted">Seu carrinho</span>
+                </h4>
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">Nome do Produto</h6>
+                      <small class="text-muted">Marvel Comics</small>
+                    </div>
+                    <span class="text-muted">12 R$</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div class="card card-inverse card-primary ">
+                      <img class="card-img-top" src="https://picsum.photos/200/150/?random">
+                      <blockquote class="card-blockquote p-3">
+                        <p style="font-weight: bold">Crentes verdadeiros: Star Wars - As cinzas de Jedha # 1</p>
+                        <footer>
+                          <small>
+                            <b>Author:</b> <cite title="Source Title"> Matthew Rosenberg</cite>
+                          </small>
+                        </footer>
+                      </blockquote>
+                    </div>
+                  </li>
+                </ul>
+
+                <form class="card p-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cupon de Desconto">
+                    <div class="input-group-append">
+                      <button type="button" (click)="getCupom($event.target.value)" class="btn btn-secondary">Buscar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Endereço de Cobrança</h4>
+                <form class="needs-validation" novalidate="">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName">Nome</label>
+                      <input type="text" class="form-control" id="nome" placeholder="" value="" required="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName">Sobrenome</label>
+                      <input type="text" class="form-control" id="sobrenome" placeholder="" value="" required="">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                      </div>
+                      <input type="text" class="form-control" id="username" placeholder="  Username" required="">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="address" placeholder="" required="">
+                    <div class="invalid-feedback">
+                      Please enter your shipping address.
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                      <label for="state">Estado</label>
+                      <select class="custom-select d-block w-100" id="estado" (change)="getCidades($event.target.value)" required="">
+                        <option value="">Selecione...</option>
+                        <option *ngFor="let estado of listaEstados" value="{{estado.ID}}">{{estado.Nome}}</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-5 mb-3">
+                      <label for="country">Cidade</label>
+                      <select class="custom-select d-block w-100" id="cidade" required="">
+                        <option value="">Selecione...</option>
+                        <option *ngFor="let cidade of listaCidades" value="{{cidade.ID}}">{{cidade.Nome}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="zip">CEP</label>
+                      <input type="text" class="form-control" id="cep" placeholder="" required="">
+                    </div>
+                  </div>
+                  <hr class="mb-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="same-address">
+                    <label class="custom-control-label" for="same-address">O endereço de entrega é o mesmo que o meu
+                      faturamento
+                      endereço</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="save-info">
+                    <label class="custom-control-label" for="save-info">Guarde esta informação para a próxima
+                      vez</label>
+                  </div>
+                  <hr class="mb-4">
+
+                  <h4 class="mb-3">Pagamento</h4>
+
+                  <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked=""
+                        required="">
+                      <label class="custom-control-label" for="credit">Cartão de Crédito</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                      <label class="custom-control-label" for="debit">Cartão de Débito</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                      <label class="custom-control-label" for="paypal">Paypal</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="cc-nome">Nome impresso no cartão</label>
+                      <input type="text" class="form-control" id="cc-nome" placeholder="" required="">
+                      <small class="text-muted">Nome completo conforme exibido no cartão</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="cc-numero">Numero do Cartão de Crédito</label>
+                      <input type="text" class="form-control" id="cc-numero" placeholder="" required="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 mb-3">
+                      <label for="cc-data-expiracao">Data de Expiração</label>
+                      <input type="text" class="form-control" id="cc-data-expiracao" placeholder="" required="">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="cc-expiration">CVV</label>
+                      <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                    </div>
+                  </div>
+                  <hr class="mb-4">
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Concluir a Compra</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

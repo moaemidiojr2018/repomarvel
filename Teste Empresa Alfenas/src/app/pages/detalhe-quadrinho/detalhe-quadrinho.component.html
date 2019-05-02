@@ -1,0 +1,43 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+  </div>
+</div>
+<!-- Page content -->
+
+<div class="container-fluid mt--7">
+  <!-- <form [formGroup]="formulario"> -->
+    <div class="row"  *ngFor="let comic of comic">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-body">
+            <!-- Portfolio Item Heading -->           
+            <h1 class="my-4">{{ comic.title }}
+            </h1>
+
+            <!-- Portfolio Item Row -->
+            <div class="row">
+              <div class="col-md-4">
+                <img  class="img-fluid" src="{{ comic['thumbnail'].path + '.' + comic['thumbnail'].extension }}" alt="">
+              </div>
+              <div class="col-md-8">
+                <p>{{ comic.description }}</p>
+                <h2 class="my-3">Detalhes da Edição</h2>
+                <ul>
+                  <li><b>Data de Publicação:</b> {{ comic.modified | date: 'dd/MM/yyyy' }}</li>
+                  <li><b>Escritor:</b> {{comic['creators'].items[0].name}}</li>
+                  <li><b>Artista da capa:</b> {{comic['creators'].items[0].name}}</li>
+                  <li><b>Desenhista:</b> {{comic['creators'].items[1].name}}</li>
+                  <li><b>Preço:</b> {{comic['prices'].price }}</li>
+                </ul>
+                <br>
+                <div class="input-group-append">
+                  <!-- <button type="button" [routerLink]="['./checkout-quadrinho', 20956]" class="btn btn-default">Comprar Edição</button> -->
+                  <a [routerLink]="['/checkout-quadrinho', comic.id]" class="btn btn-default">Comprar Edição</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </form> -->

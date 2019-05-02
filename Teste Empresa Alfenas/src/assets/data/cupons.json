@@ -1,0 +1,78 @@
+[
+    {
+        "code": "RA001",
+        "type": "RAROS"
+    },
+    {
+        "code": "CO001",
+        "type": "COMUNS"
+    },
+    {
+        "code": "RA002",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA003",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA004",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA006",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA007",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA008",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA009",
+        "type": "RAROS"
+    },
+    {
+        "code": "RA010",
+        "type": "RAROS"
+    },
+    {
+        "code": "CO002",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO003",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO004",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO005",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO006",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO007",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO008",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO009",
+        "type": "COMUNS"
+    },
+    {
+        "code": "CO010",
+        "type": "COMUNS"
+    }
+]

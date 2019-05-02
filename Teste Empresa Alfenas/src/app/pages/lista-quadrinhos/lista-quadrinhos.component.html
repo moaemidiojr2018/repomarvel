@@ -1,0 +1,38 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header bg-transparent">
+          <h3 class="mb-0">Lista de Quadrinhos</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4" *ngFor="let comic of comics">
+
+              <div class="card card-inverse card-primary">
+                <a [routerLink]="['./detalhe-quadrinho', comic.id]">
+                  <img class="card-img" src="{{ comic['thumbnail'].path + '.' + comic['thumbnail'].extension }}">
+                </a>
+                <blockquote class="card-blockquote p-3">
+                  <p style="font-weight: bold">{{ comic.title }}</p>
+                  <footer>
+                    <small>
+                      <b>Author:</b> <cite title="Source Title"> {{comic['creators'].items[0].name}}</cite>
+                    </small>
+                  </footer>
+                </blockquote>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
